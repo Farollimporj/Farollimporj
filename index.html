@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FarolLimpo RJ - Restauração Profissional de Faróis em Madureira</title>
+    <title>FarolLimpo RJ - Restauração Profissional de Faróis com Polímero Vaporizado</title>
+    <!-- Incluindo ícones FontAwesome para um visual moderno -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* --- Paleta de Cores Premium (Preto Profundo e Ouro Luxuoso) --- */
         :root {
-            --bg-color: #121212; /* Fundo escuro profissional */
-            --bg-alt: #1a1a1a;   /* Fundo alternativo */
-            --text-color: #f5f5f5; /* Texto claro */
-            --accent-gold: #ffd700; /* Ouro dos detalhes */
-            --accent-gold-dark: #ccac00;
-            --whatsapp-green: #25D366;
-            --transition-speed: 0.3s;
+            --bg-color: #050505; /* Fundo preto profundo */
+            --text-color: #ffffff; /* Texto branco puro */
+            --accent-gold: #fcc200; /* Ouro premium (cor gold do image_18.png) */
+            --accent-gold-dark: #ccac00; /* Ouro mais escuro para hover */
+            --border-gold: 2px solid #fcc200; /* Borda dourada */
+            --transition: all 0.3s ease;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
@@ -29,406 +30,492 @@
             line-height: 1.6;
         }
 
-        /* --- Header --- */
-        header {
-            background-color: #000; /* Fundo preto para o header */
-            padding: 20px 0;
-            text-align: center;
-            border-bottom: 2px solid var(--accent-gold);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        .header-logo-img {
-            max-width: 150px; /* Tamanho da logo no header */
-            height: auto;
+        /* --- Estilo de Realce Dourado --- */
+        .gold-text {
+            color: var(--accent-gold);
+            font-weight: bold;
         }
 
-        /* --- Seção Principal (Hero) --- */
-        .hero {
-            padding: 100px 20px;
+        /* --- Header --- */
+        header {
+            padding: 40px 0;
             text-align: center;
-            background: radial-gradient(circle, #2a2a2a 0%, #000 100%);
+            border-bottom: 2px solid var(--accent-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #000;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            color: #fff;
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        .hero h1 span {
+        /* Logo simulada do image_18.png */
+        .logo-placeholder {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .logo- placeholder i.fa-car {
+            font-size: 35px;
             color: var(--accent-gold);
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            color: #ccc;
+        .logo- placeholder i.fa-cross {
+            font-size: 25px;
+            color: var(--accent-gold);
         }
 
+        .logo- placeholder .logo-text {
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 1.2;
+        }
+
+        .logo- placeholder .logo-sub {
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        /* Título Principal Exato do image_18.png */
+        .main-title {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .experience-title {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            font-weight: normal;
+        }
+
+        /* Texto Religioso do image_18.png */
         .quote-block {
+            text-align: left;
             border-left: 4px solid var(--accent-gold);
             padding-left: 20px;
-            font-style: italic;
-            max-width: 600px;
-            margin: 0 auto 40px auto;
-            text-align: left;
-            color: var(--text-color);
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .quote-block p {
-            margin-bottom: 5px;
-            color: #fff;
+            color: var(--text-color);
+            font-style: italic;
         }
 
         .quote-block p.cite {
-            font-size: 0.9rem;
             color: #aaa;
+            font-size: 0.9rem;
             font-style: normal;
         }
 
-        .btn-main {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--whatsapp-green);
-            color: white;
-            text-decoration: none;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        /* --- Seção de Comparativo (Destaque para o Polímero) --- */
+        .comparison {
+            padding: 80px 0;
+            background: radial-gradient(circle, #2a2a2a 0%, #000 100%);
         }
 
-        .btn-main i {
-            margin-right: 12px;
-            font-size: 1.6rem;
-        }
-
-        .btn-main:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
-        }
-
-        /* --- Seção de Resultados (Galeria) --- */
-        .gallery {
-            padding: 80px 20px;
-            background-color: var(--bg-alt);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #fff;
-        }
-
-        .section-title span {
-            color: var(--accent-gold);
-        }
-
-        .gallery-item-group {
-            max-width: 1100px;
-            margin: 0 auto 60px auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .gallery-item-heading {
-            grid-column: 1 / -1;
-            font-size: 1.8rem;
-            color: #fff;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--accent-gold-dark);
-            padding-bottom: 10px;
-        }
-
-        .frame {
-            border: 4px solid #fff;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        .comparison-wrapper {
+            border: var(--border-gold);
             border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             position: relative;
         }
 
-        .frame img {
+        .comparison-col {
+            position: relative;
+        }
+
+        /* Placeholder para as fotos de antes e depois (simuladas) */
+        .comparison-col img {
             width: 100%;
-            height: auto;
             display: block;
+            object-fit: cover;
+            height: 500px; /* Ajuste a altura conforme necessário */
         }
 
-        .frame-label {
+        /* Marcadores "Antes" e "Depois" exatos do image_18.png */
+        .label {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
             background: rgba(0,0,0,0.8);
+            border: 1px solid #ccc;
+            border-radius: 5px;
             color: #fff;
-            padding: 10px;
+            padding: 8px 20px;
             font-weight: bold;
-            text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            top: 20px;
         }
 
-        /* Caso 3 e Clientes Satisfeitos em Coluna */
-        .case3-satisfied-block {
+        .antes .label { left: 20px; }
+        .depois .label { right: 20px; }
+
+        .date {
+            position: absolute;
+            color: var(--accent-gold);
+            background: rgba(0,0,0,0.8);
+            padding: 3px 10px;
+            font-size: 0.8rem;
+            top: 55px;
+        }
+
+        .antes .date { left: 20px; }
+        .depois .date { right: 20px; }
+
+        /* Botão Seta do image_18.png */
+        .comparison-arrow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(252, 194, 0, 0.9);
+            color: #000;
+            font-size: 25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #000;
+            z-index: 10;
+        }
+
+        /* Atualizando o Texto do Tipo de Serviço para Polímero Profissional Vaporizado */
+        .service-type {
+            grid-column: 1 / -1;
+            background-color: #000;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            font-weight: bold;
+            border-top: var(--border-gold);
+        }
+
+        .service-type span {
+            color: var(--accent-gold);
+        }
+
+        /* --- SUPER DESTAQUE: Garantia de 2 Anos --- */
+        .warranty-highlight {
+            padding: 60px 0;
+            background: #000; /* Preto absoluto */
+            border-top: var(--border-gold);
+            border-bottom: var(--border-gold);
+            text-align: center;
+        }
+
+        .warranty-badge {
+            border: var(--border-gold);
+            display: inline-block;
+            padding: 15px 50px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 20px rgba(252, 194, 0, 0.4);
+        }
+
+        .warranty-badge h2 {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+
+        .warranty-badge p {
+            color: #fff;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .warranty-text {
+            font-size: 1.6rem;
             max-width: 800px;
             margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+            color: #fff;
+            line-height: 1.4;
         }
 
-        .case3-satisfied-block .gallery-item-heading {
+        .warranty-text span {
+            color: var(--accent-gold);
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(252, 194, 0, 0.3);
+        }
+
+        /* --- Sessão de Benefícios (Ícones exatos do image_18.png) --- */
+        .benefits {
+            padding: 80px 0;
+            background-color: var(--bg-alt);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 30px 20px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .benefit-card i {
+            font-size: 45px;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
             margin-bottom: 10px;
         }
 
-        .testimonial-text {
-            background-color: var(--bg-color);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            font-style: italic;
-            text-align: center;
+        .benefit-card p {
             color: #ccc;
+            font-size: 0.8rem;
         }
 
-        /* --- Footer e Contato --- */
+        /* --- Rodapé --- */
         footer {
+            padding: 60px 0;
             background-color: #000;
-            color: var(--text-color);
-            padding: 60px 20px 30px 20px;
             border-top: 2px solid var(--accent-gold);
             text-align: center;
         }
 
-        .contact-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .footer-logo-img {
-            max-width: 200px;
-            height: auto;
+        .footer-logo {
             margin-bottom: 30px;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-            color: #ccc;
-        }
-
-        .contact-info a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color var(--transition-speed);
-        }
-
-        .contact-info a:hover {
-            color: var(--accent-gold);
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            font-size: 2rem;
+        .final-quote {
+            font-size: 1.2rem;
+            color: #fff;
             margin-bottom: 30px;
         }
 
-        .social-links a {
-            color: #555;
-            transition: color var(--transition-speed);
-        }
-
-        .social-links a:hover {
+        .final-quote span {
             color: var(--accent-gold);
+            font-weight: bold;
         }
 
-        .btn-footer {
+        /* Botão CTA WhatsApp */
+        .btn-whatsapp {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--whatsapp-green);
-            color: white;
+            background-color: var(--accent-gold);
+            color: #000;
             text-decoration: none;
             padding: 18px 40px;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: bold;
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            margin-bottom: 40px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(252, 194, 0, 0.4);
         }
 
-        .btn-footer i {
+        .btn-whatsapp i {
             margin-right: 12px;
             font-size: 1.6rem;
         }
 
-        .btn-footer:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            background-color: var(--accent-gold-dark);
+            box-shadow: 0 6px 20px rgba(252, 194, 0, 0.6);
         }
 
         .copyright {
-            font-size: 0.9rem;
+            margin-top: 40px;
+            font-size: 0.8rem;
             color: #777;
             border-top: 1px solid #222;
             padding-top: 20px;
         }
 
-        /* --- Botão Flutuante do WhatsApp --- */
-        .floating-wa {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: var(--whatsapp-green);
-            color: white;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            text-decoration: none;
-            z-index: 1000;
-            transition: transform var(--transition-speed);
-        }
-
-        .floating-wa:hover {
-            transform: scale(1.1);
-        }
-
         /* --- Media Queries (Responsividade) --- */
-        @media(max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
-            .hero, .gallery { padding: 60px 20px; }
-            .section-title { font-size: 2.2rem; }
-            .gallery-item-group { grid-template-columns: 1fr; gap: 30px;}
-            .gallery-item-heading { font-size: 1.6rem; }
-            .btn-main, .btn-footer { padding: 15px 30px; font-size: 1rem; }
-            .floating-wa { width: 60px; height: 60px; font-size: 35px; bottom: 20px; right: 20px; }
+        @media(max-width: 900px) {
+            .comparison-wrapper { grid-template-columns: 1fr; }
+            .service-type { grid-column: 1; }
+            .label, .date { top: 10px; font-size: 1rem; padding: 5px 15px; }
+            .date { top: 40px; }
+            .comparison-col img { height: 350px; }
+            .warranty-text { font-size: 1.3rem; }
+            .warranty-badge h2 { font-size: 2.2rem; }
+            .benefits-grid { grid-template-columns: repeat(3, 1fr); gap: 15px;}
+            .main-title { font-size: 2rem; }
+            .header-top { flex-direction: column; text-align: center; }
+            .quote-block { text-align: center; margin-top: 20px; border-left: none; padding-left: 0; border-top: 2px solid var(--accent-gold); padding-top: 10px; }
+        }
+
+        @media(max-width: 600px) {
+            .benefits-grid { grid-template-columns: 1fr; }
+            .btn-whatsapp { width: 100%; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho com Logo -->
+    <!-- Cabeçalho -->
     <header>
         <div class="container">
-            <img src="1000843161.png" alt="FarolLimpo RJ" class="header-logo-img">
-        </div>
-    </header>
-
-    <!-- Seção Principal (Hero) -->
-    <section class="hero">
-        <div class="container">
-            <h1>Sua visão limpa e segura nas ruas do <span>Rio de Janeiro</span></h1>
-            <p>Restauração Profissional de Faróis amarelados e opacos. Traga luz e segurança para o seu caminho.</p>
+            <div class="header-top">
+                <!-- Logo simulada exata do image_18.png -->
+                <div class="logo-placeholder">
+                    <i class="fas fa-cross"></i>
+                    <i class="fas fa-car"></i>
+                    <div>
+                        <div class="logo-text">FAROLLIMPO RJ</div>
+                        <div class="logo-sub">RESTAURAÇÃO DE FARÓIS</div>
+                    </div>
+                </div>
+                <!-- Título principal do image_18.png -->
+                <div>
+                    <h1 class="main-title">DEVOLVEMOS A <span class="gold-text">LUZ</span> E A <span class="gold-text">SEGURANÇA</span> DO SEU CAMINHO!</h1>
+                    <h2 class="experience-title">EXPERIÊNCIA E CONFIANÇA DESDE 2018</h2>
+                </div>
+            </div>
+            <!-- Texto Religioso do image_18.png -->
             <div class="quote-block">
                 <p>"A tua palavra é lâmpada para os meus pés e luz para o meu caminho."</p>
                 <p class="cite">— Salmos 119:105</p>
             </div>
-            <a href="https://wa.me/5521988235111?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20restauração%20de%20faróis." class="btn-main" target="_blank">
-                <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
-            </a>
         </div>
-    </section>
+    </header>
 
-    <!-- Seção de Resultados (Galeria) -->
-    <section class="gallery">
+    <!-- Seção de Comparativo -->
+    <section class="comparison">
         <div class="container">
-            <h2 class="section-title">Nossos Resultados: <span>Veja a Diferença</span></h2>
-            
-            <!-- Caso 1: Farol Opaco -->
-            <div class="gallery-item-group">
-                <h3 class="gallery-item-heading">Caso 1: Restauração de Farol Opaco</h3>
-                <div class="frame">
-                    <img src="1000843182.jpg" alt="Farol Opaco - Antes">
-                    <div class="frame-label">ANTES</div>
+            <div class="comparison-wrapper">
+                
+                <!-- Coluna Antes -->
+                <div class="comparison-col antes">
+                    <span class="label">ANTES</span>
+                    <span class="date">11/01/2019</span>
+                    <!-- IMAGEM SIMULADA: Substitua 'LINK_FOTO_ANTES' pelo link da sua foto do farol amarelado -->
+                    <img src="LINK_FOTO_ANTES.jpg" alt="Farol Amarelado Antes da Restauração">
                 </div>
-                <div class="frame">
-                    <img src="1000843183.jpg" alt="Farol Opaco - Depois">
-                    <div class="frame-label">DEPOIS</div>
-                </div>
-            </div>
 
-            <!-- Caso 2: Farol Amarelado e Fosco -->
-            <div class="gallery-item-group">
-                <h3 class="gallery-item-heading">Caso 2: Farol Amarelado e Fosco</h3>
-                <div class="frame">
-                    <img src="1000843186.jpg" alt="Farol Amarelado - Antes">
-                    <div class="frame-label">ANTES</div>
+                <!-- Botão Seta do image_18.png -->
+                <div class="comparison-arrow">
+                    <i class="fas fa-angle-double-right"></i>
                 </div>
-                <div class="frame">
-                    <img src="1000843187.jpg" alt="Farol Amarelado - Depois">
-                    <div class="frame-label">DEPOIS</div>
-                </div>
-            </div>
 
-            <!-- Caso 3 e Clientes Satisfeitos -->
-            <div class="case3-satisfied-block">
-                <h3 class="gallery-item-heading">Caso 3: Brilho e Clareza Total (Antes/Depois)</h3>
-                <div class="frame">
-                    <img src="1000843198.jpg" alt="Farol de Voltas às Ruas Brilhando - Resultado Completo">
+                <!-- Coluna Depois -->
+                <div class="comparison-col depois">
+                    <span class="label">DEPOIS</span>
+                    <span class="date">11/01/2019</span>
+                    <!-- IMAGEM SIMULADA: Substitua 'LINK_FOTO_DEPOIS' pelo link da sua foto do farol restaurado -->
+                    <img src="LINK_FOTO_DEPOIS.jpg" alt="Farol Novo e Transparente Depois da Restauração">
                 </div>
-                <h3 class="gallery-item-heading">Visão Perfeita e Clientes Satisfeitos</h3>
-                <div class="frame">
-                    <img src="1000843199.jpg" alt="Clientes Satisfeitos com Faróis como Novos">
+
+                <!-- Atualizando o Tipo de Serviço para Polímero Profissional -->
+                <div class="service-type">
+                    SISTEMA DE RESTAURAÇÃO DE ALTA PERFORMANCE COM: <span>POLÍMERO PROFISSIONAL VAPORIZADO</span>
                 </div>
-                <div class="testimonial-text">"Nossos clientes aprovam! Brilho e clareza para a sua segurança."</div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé e Contato -->
+    <!-- SUPER DESTAQUE: Garantia de 2 Anos -->
+    <section class="warranty-highlight">
+        <div class="container">
+            <div class="warranty-badge">
+                <h2>GARANTIA DE 2 ANOS</h2>
+                <p>PROTEÇÃO DURADOURA</p>
+            </div>
+            <p class="warranty-text">Nosso compromisso é com a qualidade. Todos os nossos serviços realizados com o <span>POLÍMERO PROFISSIONAL DE ALTA PERFORMANCE</span> possuem <span>GARANTIA EXCLUSIVA DE 2 ANOS</span> contra amarelamento e opacidade.</p>
+        </div>
+    </section>
+
+    <!-- Sessão de Benefícios (Ícones exatos do image_18.png) -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>PROTEÇÃO PROLONGADA</h3>
+                    <p>Barreira resistente contra os elementos.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="fas fa-gem"></i>
+                    <h3>BRILHO INTENSO</h3>
+                    <p>Aparência de novo, como se tivesse acabado de sair da fábrica.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>RESISTÊNCIA AO SOL E CHUVA</h3>
+                    <p>Proteção UV de alta performance contra o clima.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="fas fa-wrench"></i>
+                    <h3>RESULTADO PROFISSIONAL</h3>
+                    <p>Acabamento perfeito e clareza total.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <i class="fas fa-thumbs-up"></i>
+                    <h3>SATISFAÇÃO GARANTIDA</h3>
+                    <p>Qualidade que você vê e confia.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
     <footer>
-        <div class="contact-container">
-            <img src="1000843161.png" alt="FarolLimpo RJ" class="footer-logo-img">
-            <h2 class="section-title">Fale Conosco e Recupere Seus Faróis</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> Madureira e Região</p>
-                <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="tel:5521988235111">(21) 98823-5111</a></p>
+        <div class="container">
+            <div class="footer-logo logo-placeholder" style="justify-content: center; text-align: center;">
+                <i class="fas fa-cross"></i>
+                <i class="fas fa-car"></i>
+                <div>
+                    <div class="logo-text">FAROLLIMPO RJ</div>
+                    <div class="logo-sub">RESTAURAÇÃO DE FARÓIS</div>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <a href="https://wa.me/5521988235111?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20restauração%20de%20faróis." class="btn-footer" target="_blank">
-                <i class="fab fa-whatsapp"></i> Agende no WhatsApp
+            <!-- Texto de rodapé exato do image_18.png -->
+            <p class="final-quote">FARÓIS COM APARÊNCIA DE <span class="gold-text">NOVOS</span> E MAIS <span class="gold-text">SEGURANÇA</span> PARA VOCÊ E SUA FAMÍLIA!</p>
+            
+            <a href="https://wa.me/5521999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20restauração%20de%20faróis." class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Agendar pelo WhatsApp
             </a>
-            <p class="copyright">&copy; 2026 FarolLimpo RJ. Todos os direitos reservados.</p>
+
+            <p class="copyright">&copy; 2026 FarolLimpo RJ. Experiência e confiança desde 2018.</p>
         </div>
     </footer>
 
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/5521988235111?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20restauração%20de%20faróis." class="floating-wa" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
 </body>
-  </html>
-  
+</html>
