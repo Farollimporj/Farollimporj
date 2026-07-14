@@ -1,152 +1,434 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Farol Limpo RJ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarolLimpo RJ - Restauração Profissional de Faróis em Madureira</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #121212; /* Fundo escuro profissional */
+            --bg-alt: #1a1a1a;   /* Fundo alternativo */
+            --text-color: #f5f5f5; /* Texto claro */
+            --accent-gold: #ffd700; /* Ouro dos detalhes */
+            --accent-gold-dark: #ccac00;
+            --whatsapp-green: #25D366;
+            --transition-speed: 0.3s;
+        }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
 
-body{
-background:#111;
-color:#fff;
-line-height:1.6;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-header{
-background:#000;
-padding:50px 20px;
-text-align:center;
-}
+        /* --- Header --- */
+        header {
+            background-color: #000; /* Fundo preto para o header */
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-header h1{
-font-size:38px;
-color:#FFD700;
-}
+        header .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-header p{
-margin-top:10px;
-font-size:18px;
-}
+        .header-logo-img {
+            max-width: 150px; /* Tamanho da logo no header */
+            height: auto;
+        }
 
-.botao{
-display:inline-block;
-margin-top:25px;
-background:#25D366;
-color:#fff;
-padding:15px 30px;
-text-decoration:none;
-border-radius:8px;
-font-size:20px;
-font-weight:bold;
-}
+        /* --- Seção Principal (Hero) --- */
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: radial-gradient(circle, #2a2a2a 0%, #000 100%);
+        }
 
-section{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
 
-h2{
-color:#FFD700;
-margin-bottom:20px;
-}
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
 
-.galeria{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            color: #ccc;
+        }
 
-.galeria img{
-width:100%;
-border-radius:10px;
-}
+        .quote-block {
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 20px;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            text-align: left;
+            color: var(--text-color);
+        }
 
-footer{
-text-align:center;
-padding:30px;
-background:#000;
-margin-top:40px;
-}
-</style>
+        .quote-block p {
+            margin-bottom: 5px;
+            color: #fff;
+        }
 
+        .quote-block p.cite {
+            font-size: 0.9rem;
+            color: #aaa;
+            font-style: normal;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--whatsapp-green);
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-main i {
+            margin-right: 12px;
+            font-size: 1.6rem;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* --- Seção de Resultados (Galeria) --- */
+        .gallery {
+            padding: 80px 20px;
+            background-color: var(--bg-alt);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+
+        .section-title span {
+            color: var(--accent-gold);
+        }
+
+        .gallery-item-group {
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .gallery-item-heading {
+            grid-column: 1 / -1;
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--accent-gold-dark);
+            padding-bottom: 10px;
+        }
+
+        .frame {
+            border: 4px solid #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .frame-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            color: #fff;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        /* Caso 3 e Clientes Satisfeitos em Coluna */
+        .case3-satisfied-block {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .case3-satisfied-block .gallery-item-heading {
+            margin-bottom: 10px;
+        }
+
+        .testimonial-text {
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            font-style: italic;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* --- Footer e Contato --- */
+        footer {
+            background-color: #000;
+            color: var(--text-color);
+            padding: 60px 20px 30px 20px;
+            border-top: 2px solid var(--accent-gold);
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .footer-logo-img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        .contact-info a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color var(--transition-speed);
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            color: #555;
+            transition: color var(--transition-speed);
+        }
+
+        .social-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .btn-footer {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--whatsapp-green);
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            margin-bottom: 40px;
+        }
+
+        .btn-footer i {
+            margin-right: 12px;
+            font-size: 1.6rem;
+        }
+
+        .btn-footer:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #777;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+
+        /* --- Botão Flutuante do WhatsApp --- */
+        .floating-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            text-decoration: none;
+            z-index: 1000;
+            transition: transform var(--transition-speed);
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- Media Queries (Responsividade) --- */
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero, .gallery { padding: 60px 20px; }
+            .section-title { font-size: 2.2rem; }
+            .gallery-item-group { grid-template-columns: 1fr; gap: 30px;}
+            .gallery-item-heading { font-size: 1.6rem; }
+            .btn-main, .btn-footer { padding: 15px 30px; font-size: 1rem; }
+            .floating-wa { width: 60px; height: 60px; font-size: 35px; bottom: 20px; right: 20px; }
+        }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <!-- Cabeçalho com Logo -->
+    <header>
+        <div class="container">
+            <img src="1000843161.png" alt="FarolLimpo RJ" class="header-logo-img">
+        </div>
+    </header>
 
-<h1>Farol Limpo RJ</h1>
+    <!-- Seção Principal (Hero) -->
+    <section class="hero">
+        <div class="container">
+            <h1>Sua visão limpa e segura nas ruas do <span>Rio de Janeiro</span></h1>
+            <p>Restauração Profissional de Faróis amarelados e opacos. Traga luz e segurança para o seu caminho.</p>
+            <div class="quote-block">
+                <p>"A tua palavra é lâmpada para os meus pés e luz para o meu caminho."</p>
+                <p class="cite">— Salmos 119:105</p>
+            </div>
+            <a href="https://wa.me/5521988235111?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20restauração%20de%20faróis." class="btn-main" target="_blank">
+                <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
+            </a>
+        </div>
+    </section>
 
-<p>Especialistas em restauração de faróis em Madureira e região.</p>
+    <!-- Seção de Resultados (Galeria) -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Nossos Resultados: <span>Veja a Diferença</span></h2>
+            
+            <!-- Caso 1: Farol Opaco -->
+            <div class="gallery-item-group">
+                <h3 class="gallery-item-heading">Caso 1: Restauração de Farol Opaco</h3>
+                <div class="frame">
+                    <img src="1000843182.jpg" alt="Farol Opaco - Antes">
+                    <div class="frame-label">ANTES</div>
+                </div>
+                <div class="frame">
+                    <img src="1000843183.jpg" alt="Farol Opaco - Depois">
+                    <div class="frame-label">DEPOIS</div>
+                </div>
+            </div>
 
-<p>✔ Garantia de até 2 anos</p>
+            <!-- Caso 2: Farol Amarelado e Fosco -->
+            <div class="gallery-item-group">
+                <h3 class="gallery-item-heading">Caso 2: Farol Amarelado e Fosco</h3>
+                <div class="frame">
+                    <img src="1000843186.jpg" alt="Farol Amarelado - Antes">
+                    <div class="frame-label">ANTES</div>
+                </div>
+                <div class="frame">
+                    <img src="1000843187.jpg" alt="Farol Amarelado - Depois">
+                    <div class="frame-label">DEPOIS</div>
+                </div>
+            </div>
 
-<p>✔ Atendimento rápido</p>
+            <!-- Caso 3 e Clientes Satisfeitos -->
+            <div class="case3-satisfied-block">
+                <h3 class="gallery-item-heading">Caso 3: Brilho e Clareza Total (Antes/Depois)</h3>
+                <div class="frame">
+                    <img src="1000843198.jpg" alt="Farol de Voltas às Ruas Brilhando - Resultado Completo">
+                </div>
+                <h3 class="gallery-item-heading">Visão Perfeita e Clientes Satisfeitos</h3>
+                <div class="frame">
+                    <img src="1000843199.jpg" alt="Clientes Satisfeitos com Faróis como Novos">
+                </div>
+                <div class="testimonial-text">"Nossos clientes aprovam! Brilho e clareza para a sua segurança."</div>
+            </div>
+        </div>
+    </section>
 
-<p>✔ Orçamento gratuito</p>
+    <!-- Rodapé e Contato -->
+    <footer>
+        <div class="contact-container">
+            <img src="1000843161.png" alt="FarolLimpo RJ" class="footer-logo-img">
+            <h2 class="section-title">Fale Conosco e Recupere Seus Faróis</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Madureira e Região</p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="tel:5521988235111">(21) 98823-5111</a></p>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <a href="https://wa.me/5521988235111?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20restauração%20de%20faróis." class="btn-footer" target="_blank">
+                <i class="fab fa-whatsapp"></i> Agende no WhatsApp
+            </a>
+            <p class="copyright">&copy; 2026 FarolLimpo RJ. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-<a class="botao" href="https://wa.me/5521988235111?text=Olá,%20quero%20um%20orçamento%20para%20restauração%20de%20faróis." target="_blank">
-
-Solicitar Orçamento
-
-</a>
-
-</header>
-
-<section>
-
-<h2>Antes e Depois</h2>
-
-<div class="galeria">
-
-<img src="foto1.jpg">
-
-<img src="foto2.jpg">
-
-<img src="foto3.jpg">
-
-<img src="foto4.jpg">
-
-</div>
-
-</section>
-
-<section>
-
-<h2>Por que escolher a Farol Limpo RJ?</h2>
-
-<p>• Acabamento profissional</p>
-
-<p>• Atendimento em Madureira e região</p>
-
-<p>• Produtos de alta durabilidade</p>
-
-<p>• Serviço rápido</p>
-
-<p>• Faróis com aparência de novos</p>
-
-</section>
-
-<section style="text-align:center;">
-
-<h2>Solicite seu orçamento agora</h2>
-
-<a class="botao" href="https://wa.me/5521988235111?text=Olá,%20quero%20um%20orçamento." target="_blank">
-
-Chamar no WhatsApp
-
-</a>
-
-</section>
-
-<footer>
-
-Farol Limpo RJ © 2026
-
-</footer>
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5521988235111?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20restauração%20de%20faróis." class="floating-wa" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
-</html>
+  </html>
+  
